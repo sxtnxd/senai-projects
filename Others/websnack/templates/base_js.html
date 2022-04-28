@@ -1,0 +1,29 @@
+<script type="text/javascript">
+	let menu = document.querySelector('#menu');
+	let nav = document.querySelector('.navbar');
+
+	menu.onclick = () => {
+		menu.classList.toggle('fa-times');
+		nav.classList.toggle('active');
+	}
+
+	window.onscroll = () => {
+		menu.classList.remove('fa-times');
+		nav.classList.remove('active');
+	} 
+
+	var swiper = new Swiper('.home-slider', {
+		spaceBetween: 30,
+		centeredSlides: true,
+		autoplay: {
+			delay: 7500,
+			disableOnInteraction: false,
+		},
+		pagination: {
+			el: '.swiper-pagination',
+			clickable: true,
+		},
+		loop: true,
+	})
+
+</script>

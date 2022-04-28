@@ -1,0 +1,20 @@
+{% extends 'default.html' %}
+{% load static %}
+
+{% block 'title' %}Olympus Hospital{% endblock %}
+
+{% block 'content' %}
+<div class="container text-center">
+
+    {% include 'carrousel.html' %}
+
+    <hr>
+
+    {% include 'about.html' %}
+
+     <hr>
+
+    {% include 'map.html' %}
+
+</div>
+{% endblock %}

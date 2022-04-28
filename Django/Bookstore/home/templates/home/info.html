@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block 'title' %} Detalhes {% endblock %}
+
+{% block 'content' %}
+<div class="container" >
+    <div class="card text-center w-100 h-75 ">
+      <div class="card-header">
+          {{ dado.genre }}
+      </div>
+      <div class="card-body">
+          {% if dado.cover  %}
+          <img src="{{dado.cover.url}}" class="card-img-top" alt="..." style="width: 16rem; height: 20rem">
+          {% endif %}
+          <div class="card-body">
+        <h5 class="card-title">{{ dado.title }}</h5>
+        <p class="card-text">{{ dado.description }}</p>
+
+  <div class="card-body">
+<hr>
+    <blockquote class="blockquote mb-0">
+      <p>"{{ DADO.quote }}"</p>
+      <footer class="blockquote-footer"> {{ DADO.authorQ }} in <cite title="Source Title">{{ dado.title }}</cite></footer>
+    </blockquote>
+  </div>
+<hr>
+          <p class="card-text">{{ dado.pages }} Pages</p>
+          <p class="card-text" style="font-weight: bold">Written by {{ dado.author }}</p>
+          <p class="card-text" style="font-weight: bold">Published by {{ dado.pCompany }}</p>
+        <a href="{% url 'home' %}" class="btn btn-primary">Go Back</a>
+      </div>
+      <div class="card-footer text-muted">
+        Publish Date: {{ dado.publishDate|date:'d/m/y' }}
+      </div>
+</div>
+</div>
+    </div>
+{% endblock %}

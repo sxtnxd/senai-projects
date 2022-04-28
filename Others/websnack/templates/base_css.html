@@ -1,0 +1,147 @@
+<style type="text/css">
+	
+	@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap');
+
+	:root {
+		--margin-content: 1.5rem 7%;
+		--font-size-nav: 1.5rem;
+		--black: #121212;
+		--light: #777777;
+		--red: #cc0000;
+		--red-hover: #882424;
+	}
+
+	* {
+		font-family: 'Nunito', sans-serif;
+		margin: 0; padding: 0;
+		border: 0; outline: 0;
+		box-sizing: border-box;
+		transition: all .2s linear;
+		text-decoration: none;
+	}
+
+	html {
+		font-size: 62.5%;
+		scroll-behavior: smooth;
+		overflow-x: hidden;
+	}
+
+	.content {
+		margin-right: var(--margin-content);
+		margin-left: var(--margin-content);
+	}
+
+	/*------------------- START HEADER -------------------*/
+
+	#menu { display: none; }
+
+	header {
+		position: fixed;
+		top: 0; left: 0; right: 0;
+		background: #fff;
+		padding: var(--margin-content);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-direction: row;
+		z-index: 1000;
+		box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .03);
+	}
+
+	header .logo {
+		color: var(--black);
+		font-size: 2.5rem;
+		font-weight: bolder;
+	}
+
+	header .logo span {
+		color: var(--red);
+	}
+
+	header .navbar a {
+		font-size: 1.5rem;
+		margin-left: 2rem;
+		color: var(--black);
+	}
+
+	header .navbar a.signup {
+		background: var(--red);
+		color: #fff;
+		padding: .8rem 2rem;
+		border-radius: .3rem;
+	}
+
+	header .navbar a:hover { color: #000; }
+
+	header .navbar a.signup:hover {
+		background: var(--red-hover);
+		color: #fff;
+	}
+
+	header .icons i {
+		font-size: 2rem;
+		margin-left: 3rem;
+		cursor: pointer;
+	}
+
+	/*------------------- END HEADER -------------------*/
+
+	/*------------------- START HOME -------------------*/
+
+	section {
+		padding: 1rem 9% 2rem 9%;
+	}
+
+	
+
+	/*------------------- END HOME -------------------*/
+
+	/*------------------- QUERIES -------------------*/
+	
+	@media (max-width: 991px) {
+		html { font-size: 58%;  }
+		header {
+			padding: 2rem 2rem;
+		}
+	}
+
+	@media (max-width: 768px) {
+		header .icons i {
+			font-size: 2.5rem;
+		}
+
+		header .icons #menu {
+			display: inline-block;
+			height: 24px;
+    		width: 24px;
+		}
+
+		header .navbar {
+			position: absolute;
+			top: 100%; left: 0; right: 0;
+			background: #fff;
+			border-top: .1rem solid rgba(0, 0, 0, .2);
+			border-bottom: .1rem solid rgba(0, 0, 0, .2);
+			padding: 1rem;
+			clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+		}
+
+		header .navbar.active {
+			clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+		}
+
+		header .navbar a, header .navbar a.signup {
+			display: block;
+			padding: 1.5rem;
+			margin: 1rem;
+			font-size: 2rem;
+			background: #eee;
+			border-radius: .5rem;
+		}
+
+		header .navbar a.signup {
+			background: var(--red);
+		}
+	}
+
+</style>

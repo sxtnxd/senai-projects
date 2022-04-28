@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+    <!-- Header Area wrapper Starts -->
+    <header id="header-wrap">
+      <!-- Navbar Start -->
+      {% include 'header/navbar.html' %}
+      <!-- Navbar End -->
+
+      <!-- Hero Area Start -->
+      {% include 'header/hero.html' %}
+      <!-- Hero Area End -->
+
+    </header>
+    <!-- Header Area wrapper End -->
+
+    <!-- Services Section Start -->
+      {% include 'basic/services.html' %}
+    <!-- Services Section End -->
+
+    <!-- About Section start -->
+      {% include 'basic/about.html' %}
+    <!-- About Section End -->
+
+    <!-- Features Section Start -->
+      {% include 'basic/features.html' %}
+    <!-- Features Section End -->
+
+    <!-- Team Section Start -->
+      {% include 'others/team.html' %}
+    <!-- Team Section End -->
+
+    <!-- Pricing section Start -->
+      {% include 'basic/pricing.html' %}
+    <!-- Pricing Table Section End -->
+
+    <!-- Testimonial Section Start -->
+    {% include 'others/testimonial.html' %}
+    <!-- Testimonial Section End -->
+
+    <!-- Call To Action Section Start -->
+    {% include 'basic/cta.html' %}
+    <!-- Call To Action Section Start -->
+
+    <!-- Contact Section Start -->
+    {% include 'basic/contact.html' %}
+    <!-- Contact Section End -->
+
+    <!-- Footer Section Start -->
+    {% include 'basic/footer.html' %}
+    <!-- Footer Section End -->
+
+    <!-- Go to Top Link -->
+    {% include 'others/GoToTop.html' %}
+    <!-- Preloader -->
+    {% include 'others/preloader.html' %}
+    <!-- End Preloader -->
+
+{% endblock %}

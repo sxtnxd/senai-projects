@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block 'title' %}Home{% endblock %}
+
+{% block 'content' %}
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Recomendados</h1>
+        <p class="lead">Escolha um dos livros abaixo</p>
+    </div>
+</div>
+
+    <div class="container">
+        <div class="mt-2">
+            {% include 'msg.html' %}
+        </div>
+
+<div class="row row-cols-1 row-cols-md-5 g-4">
+
+    {% for dado in dados %}
+    <div class="col">
+        <div class="card text-center border-dark mb-3">
+          <img src="{{ dado.cover.url }}" class="card-img-top" alt="..." >
+          <div class="card-body">
+            <h5 class="card-title">{{dado.title}}</h5>
+            <p class="card-text">Author: {{dado.author}}</p>
+              <p class="card-text">Genre: {{dado.genre}}</p>
+            <a href="{% url 'info' dado.id %}" class="btn btn-primary">More...</a>
+          </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

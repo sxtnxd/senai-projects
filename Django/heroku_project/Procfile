@@ -1,0 +1,1 @@
+web: guicorn heroku2.wsgi --log--file -

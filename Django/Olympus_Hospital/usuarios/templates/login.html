@@ -1,0 +1,28 @@
+{% extends 'default.html' %}
+
+{% block 'title' %}LogIn{% endblock %}
+{% load bootstrap5 %}
+
+{% block 'content' %}
+<div class="container">{% include 'msg.html' %}</div>
+
+
+<div class="container mt-5 mb-5 d-flex justify-content-center">
+
+
+  <form class="col-md-4" method="POST">
+      <h4>Login</h4>
+    {% csrf_token %}
+      <div class="mb-3">
+        <label class="form-label">Username</label>
+        <input type="text" class="form-control" name="username">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input type="password" class="form-control" name="password">
+      </div>
+    <button type="submit" class="btn btn-dark" style="width:100%">Sign In</button>
+  </form>
+</div>
+
+{% endblock %}

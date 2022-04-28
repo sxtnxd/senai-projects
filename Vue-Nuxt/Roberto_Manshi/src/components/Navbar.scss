@@ -1,0 +1,21 @@
+#navbar{
+    width: 100%;
+    height: 80px;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: var(--myback);
+
+    a{
+        color: var(--mycolor);
+        text-decoration: none;        
+    }  
+
+    #myLogo{
+        width: 30px;
+        height: 30px;
+    }
+
+}
+

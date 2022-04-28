@@ -1,0 +1,50 @@
+{% extends 'default.html' %}
+
+{% block 'title' %}Schedules{% endblock %}
+
+{% load bootstrap5 %}
+{% block 'content' %}
+
+
+<div class="container">
+  <ol class="list-group list-group-numbered">
+    {% for v in data %}
+
+      <li class="list-group-item d-flex justify-content-between align-items-start">
+      <div class="ms-2 me-auto">
+        <div class="fw-bold">Pacient {{ v.user }} - {{ v.description }}</div>
+        Doctor {{ v.medic }} -
+        At {{ v.date }}
+      </div>
+        {% if v.status is True %}
+        <span class="badge bg-success rounded-pill">accepted</span>
+        {% else %}
+        <span class="badge bg-warning rounded-pill">on wait</span>
+
+        {% endif %}
+
+
+        {% empty %}
+
+      <div class="card text-center">
+          <div class="card-header">
+            Hello There!
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">You don't have any appointments yet!</h5>
+            <p class="card-text">It looks like you didn't scheduled any appointment.</p>
+            <a href="{% url 'appointment' %}" class="btn btn-dark">Make an Appointment</a>
+          </div>
+          <div class="card-footer text-muted">
+            You can also <a href="{% url 'logout' %}"> logout </a>
+      </div>
+
+    {% endfor %}
+
+      </li>
+  </ol>
+</div>
+
+
+
+{% endblock %}
